@@ -1,0 +1,10 @@
+def f(x,y,c,m):
+    if (x+y)>94: return c%2==m%2
+    if c==m: return 0
+    h=[f(x+1,y,c+1,m),f(x*4,y,c+1,m),f(x,y+1,c+1,m),f(x,y*4,c+1,m)]
+    return any(h) if (c+1)%2==m%2 else all(h)
+for y in range(90):
+    for m in range(5):
+        if f(5,y,0,m):
+            if m==4:
+                print(y,m)
