@@ -1,0 +1,11 @@
+n=[int(x) for x in open('17-7.txt')]
+b=[]
+for i in range(len(n)):
+    x=n[i]
+    k=0
+    while x:
+        k+=x%10
+        x=x//10
+    if k%3==0:
+        b.append(n[i])
+print(len(b),max(b))
